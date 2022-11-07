@@ -1,0 +1,42 @@
+
+.header{
+  padding: 43px 0 45px;
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+    display: flex;
+    &-img{
+      width: 40px;
+      height: 40px;
+    }
+    &-text{
+      margin-left: 16px;
+    }
+    &-title{
+      &-link{
+        @include text($int,normal, 700px,20px,0,#000000);
+        text-transform: uppercase;
+      }
+    }
+    &-subtitle{
+      @include text($int,normal,400,14px,0,#9D9D9D)
+    }
+  }
+  &__links{
+    display: flex;
+    &-basket{
+      display: flex;
+      &-text{
+        @include text($int,normal,600,14px, 0, #5C5C5C);
+        margin-left: 10px;
+      }
+    }
+    &-favorites{
+      margin: 0 30px;
+    }
+  }
+  border-bottom: 1px solid #EAEAEA;
+}

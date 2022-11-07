@@ -1,0 +1,122 @@
+
+.main__assort{
+  &-topContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 37px 0 36px;
+    width: 100%;
+  }
+  &-form{
+    display: flex;
+    align-items: center;
+    position: relative;
+    &-input{
+      border-radius: 10px;
+      border: 1px solid #F3F3F3;
+      outline: none;
+      padding: 13px 40px 15px 46px;
+      max-width: 250px;
+      &::placeholder{
+        color:#C4C4C4;
+      }
+      &::-webkit-search-cancel-button{
+        position: absolute;
+        right: 18px;
+        cursor: pointer;
+        color: #5C5C5C;
+      }
+    }
+    &-icon{
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &-title{
+    @include text($int, normal,700, 32px, 0, black)
+  }
+  &-mainContent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    &-shoes{
+      border: 1px solid #F3F3F3;
+      border-radius: 40px;
+      padding: 20px 29px 34px 30px;
+      max-width: 210px;
+    }
+    &-favorites{
+      display: inline-block;
+      position: absolute;
+      border: 1px solid #F8F8F8;
+      border-radius: 7px;
+      padding: 9.6px 9.07px 3.59px;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.13);
+        background-color: rgba(253,239,239,0.87);
+        transition: 0.2s;
+      }
+      &-active{
+        display: none;
+        position: absolute;
+        background-color: #FEF0F0;
+        border: 1px solid transparent;
+        border-radius: 7px;
+        padding: 9.6px 9.07px 3.59px;
+        cursor: pointer;
+      }
+    }
+    &-product{
+      &-desc{
+        @include text($int, normal, 400, 14px, 17px, black)
+      }
+      &-pricesDesc{
+        margin-top: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-price{
+          @include text($int, normal,500, 11px, 13px, #BDBDBD);
+          text-transform: uppercase;
+        }
+        &-cost{
+          @include text($int, normal,700,14px, 17px,black)
+        }
+        &-addBask{
+          cursor: pointer;
+          display: inline-block;
+          padding: 5.33px 8.33px;
+          border: 1px solid #F2F2F2;
+          border-radius: 8px;
+          transition: 0.2s;
+          &:hover{
+            transform: scale(1.13);
+            background-color: rgba(253,239,239,0.87);
+            transition: 0.2s;
+          }
+          &-active{
+            cursor: pointer;
+            display: none;
+            max-height: 32px;
+            max-width: 32px;
+            padding: 5.33px 8.33px;
+            border: 1px solid white;
+            border-radius: 8px;
+            background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+            transition: 0.2s;
+            &:hover{
+              transform: scale(1.13);
+              transition: 0.2s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
