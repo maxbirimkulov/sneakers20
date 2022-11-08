@@ -1,41 +1,42 @@
-let swiper = new Swiper(".mySwiper", {
-    cssMode: true,
-    navigation: {
-        nextEl: ".swiper__icon-next",
-        prevEl: ".swiper__icon-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-    },
-    mousewheel: true,
-    keyboard: true,
-});
+let basketBtn = document.querySelector('.header__links-basket');
+let basketContent = document.querySelector('.basket');
+let shoesList = document.querySelector('.main__assort-mainContent');
+let filterSelectorPrice = document.querySelector('.main__assort-select-price');
+let filterSelectorCategory = document.querySelector(
+  '.main__assort-select-category'
+);
+let filterSelectorGender = document.querySelector(
+  '.main__assort-select-gender'
+);
+let filterSelectorBrands = document.querySelector(
+  '.main__assort-select-brands'
+);
+let filterSearch = document.querySelector('.main__assort-form-input');
+let url = 'http://localhost:8080/shoes?';
 
-let shoesList = document.querySelector('.main__assort-mainContent')
-let filterSelectorPrice = document.querySelector('.main__assort-select-price')
-let filterSelectorCategory = document.querySelector('.main__assort-select-category')
-let filterSelectorGender = document.querySelector('.main__assort-select-gender')
-let filterSelectorBrands = document.querySelector('.main__assort-select-brands')
-let filterSearch = document.querySelector('.main__assort-form-input')
-let url = 'http://localhost:8080/shoes?'
-
-let filterPrice = ''
-let filterCategory = ''
-let filterGender = ''
-let filterBrands = ''
-let filterSearchValue = ''
+let filterPrice = '';
+let filterCategory = '';
+let filterGender = '';
+let filterBrands = '';
+let filterSearchValue = '';
 
 const getShoes = () => {
-    shoesList.innerHTML = ''
-    fetch(url +
-            `${filterPrice.length ? '_sort=price&_order='+ filterPrice + '&' : ''}${filterCategory.length ? 'category=' + filterCategory + '&' : ''}${filterGender.length ? 'gender=' + filterGender + "&": ''}${filterBrands.length ? 'brand=' + filterBrands + '&' : ''}${filterSearchValue.length ? 'title_like=' + filterSearchValue + '&' : ''}`
-        )
-        .then((resolve) => resolve.json() )
-        .then((resolve) => {
-            console.log(resolve)
-            resolve.forEach((item) => {
-               shoesList.innerHTML +=
-                   `
+  shoesList.innerHTML = '';
+  fetch(
+    url +
+      `${filterPrice.length ? '_sort=price&_order=' + filterPrice + '&' : ''}${
+        filterCategory.length ? 'category=' + filterCategory + '&' : ''
+      }${filterGender.length ? 'gender=' + filterGender + '&' : ''}${
+        filterBrands.length ? 'brand=' + filterBrands + '&' : ''
+      }${
+        filterSearchValue.length ? 'title_like=' + filterSearchValue + '&' : ''
+      }`
+  )
+    .then((resolve) => resolve.json())
+    .then((resolve) => {
+      console.log(resolve);
+      resolve.forEach((item) => {
+        shoesList.innerHTML += `
                     <div class="main__assort-mainContent-shoes">
                         <div class="main__assort-mainContent-favorites">
                             <span class="main__assort-mainContent-favorites-logo"><svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,15 +52,25 @@ const getShoes = () => {
 
                             </span>
                         </div>
-                        <img style="width: 100%" src="${item.images}" alt="product image" class="main__assort-mainContent-product">
+                        <img style="width: 100%" src="${
+                          item.images
+                        }" alt="product image" class="main__assort-mainContent-product">
                         
-                        <h4 class="main__assort-mainContent-product-desc">${item.title}</h4>
-                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${item.gender === 'men' ? 'мужской' : "Женский"}</p>
-                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${item.category}</p>
+                        <h4 class="main__assort-mainContent-product-desc">${
+                          item.title
+                        }</h4>
+                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${
+                          item.gender === 'men' ? 'мужской' : 'Женский'
+                        }</p>
+                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${
+                          item.category
+                        }</p>
                         <div class="main__assort-mainContent-product-pricesDesc">
                             <div class="main__assort-mainContent-product-pricesDesc-text">
                                 <p class="main__assort-mainContent-product-pricesDesc-price">Цена:</p>
-                                <p class="main__assort-mainContent-product-pricesDesc-cost">${item.price} руб.</p>
+                                <p class="main__assort-mainContent-product-pricesDesc-cost">${
+                                  item.price
+                                } руб.</p>
                             </div>
                             <div class="main__assort-mainContent-product-pricesDesc-addBask">
                                 <span class="main__assort-mainContent-product-pricesDesc-addBask-logo">
@@ -87,33 +98,54 @@ const getShoes = () => {
                             </div>
                         </div>
                     </div>
-                   `
-            })
-        } )
-        .catch((err) => alert(err))
+                   `;
+      });
+    })
+    .catch((err) => alert(err));
+};
 
-}
+const debounce = (fn, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    let fnCall = () => {
+      fn(...args);
+    };
+    timeout = setTimeout(fnCall, delay);
+  };
+};
 
 filterSelectorPrice.addEventListener('change', (e) => {
-    filterPrice = e.target.value
-    getShoes()
-})
+  filterPrice = e.target.value;
+  getShoes();
+});
 filterSelectorCategory.addEventListener('change', (e) => {
-    filterCategory = e.target.value
-    getShoes()
-})
+  filterCategory = e.target.value;
+  getShoes();
+});
 filterSelectorGender.addEventListener('change', (e) => {
-    filterGender = e.target.value
-    getShoes()
-})
+  filterGender = e.target.value;
+  getShoes();
+});
 filterSelectorBrands.addEventListener('change', (e) => {
-    filterBrands = e.target.value
-    getShoes()
-})
+  filterBrands = e.target.value;
+  getShoes();
+});
 
 filterSearch.addEventListener('keyup', (e) => {
-    filterSearchValue = e.target.value
-    getShoes()
-})
+  filterSearchValue = e.target.value;
+  debounce(getShoes(), 2000);
+  debounce(console.log('QWEETT'), 2000);
+});
 
-getShoes()
+basketBtn.addEventListener('click', (e) =>
+  basketContent.classList.toggle('show')
+);
+
+basketContent.addEventListener('click', (e) => {
+  if (e.target.closest('.basket__content') === null) {
+    basketContent.classList.remove('show');
+  }
+});
+
+getShoes();

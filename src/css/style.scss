@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap');
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-  transition: 0.1s;
+  transition: 0.3s;
 }
-.container{
+.container {
   max-width: 1050px;
   padding: 0 45px;
   margin: 0 auto;
 }
-$int:'inter', sans-serif;
+$int: 'inter', sans-serif;
 
 @mixin text($ff, $fs, $fw, $fz, $lh, $col) {
   font-family: $ff;
@@ -25,15 +25,17 @@ $int:'inter', sans-serif;
   }
   color: $col;
 }
-body{
-  background-color: #E5E5E5;
+body {
+  background-color: #e5e5e5;
 }
-.floor{
+.floor {
   background-color: white;
 }
-@import "header";
-@import "main";
-@import "assort";
-@import "basket";
-@import "favorites";
-@import "basketNone";
+@import '_header.scss';
+@import '_main.scss';
+@import '_assort.scss';
+@import '_basketPopup.scss';
+@import '_card.scss';
+@import '_basket.scss';
+@import '_favorites.scss';
+@import '_basketNone.scss';
