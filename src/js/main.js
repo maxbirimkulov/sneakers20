@@ -1,3 +1,9 @@
+import {getUserFromLocalStorage, user} from "./user.js";
+
+
+getUserFromLocalStorage()
+
+console.log(user)
 let basketBtn = document.querySelector('.header__links-basket');
 let basketContent = document.querySelector('.basket');
 let shoesList = document.querySelector('.main__assort-mainContent');
@@ -12,13 +18,34 @@ let filterSelectorBrands = document.querySelector(
   '.main__assort-select-brands'
 );
 let filterSearch = document.querySelector('.main__assort-form-input');
+let basketList = document.querySelector('.basket__cards')
+let totalBasket = document.querySelectorAll('.total')
+let percentBasket = document.querySelector('.percent')
 let url = 'http://localhost:8080/shoes?';
+
+
+let basketData = [
+
+]
+
+if (localStorage.getItem('basket') !== null) {
+    basketData = JSON.parse(localStorage.getItem('basket'))
+}
+
+
+
+
 
 let filterPrice = '';
 let filterCategory = '';
 let filterGender = '';
 let filterBrands = '';
 let filterSearchValue = '';
+
+
+const setLocalStorage = () => {
+    localStorage.setItem('basket', JSON.stringify(basketData))
+}
 
 const getShoes = () => {
   shoesList.innerHTML = '';
@@ -72,13 +99,15 @@ const getShoes = () => {
                                   item.price
                                 } руб.</p>
                             </div>
-                            <div class="main__assort-mainContent-product-pricesDesc-addBask">
+                            ${
+                                !basketData.filter((el) => el.id === item.id).length ?
+                                    `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask addCart">
                                 <span class="main__assort-mainContent-product-pricesDesc-addBask-logo">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z" fill="#D3D3D3"/></svg></span>
-                            </div>
-                            <div class="main__assort-mainContent-product-pricesDesc-addBask-active">
-                            <span class="main__assort-mainContent-product-pricesDesc-addBask-logo-active">
+                            </div>` : 
+                                    `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask-active removeCart">
+                                <span class="main__assort-mainContent-product-pricesDesc-addBask-logo-active">
                                 <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_60_204)">
 <path d="M9.6567 0.620692C9.83936 0.436333 10.0876 0.331772 10.3471 0.329861C10.6066 0.327949 10.8563 0.428842 11.0416 0.61049C11.227 0.792138 11.3329 1.03977 11.3362 1.29927C11.3395 1.55877 11.24 1.80903 11.0594 1.99536L5.83271 8.52936C5.74292 8.62603 5.63456 8.70362 5.51412 8.75749C5.39368 8.81136 5.26362 8.84041 5.1317 8.8429C4.99979 8.84539 4.86872 8.82127 4.74633 8.77198C4.62394 8.72269 4.51274 8.64924 4.41937 8.55602L0.954039 5.09202C0.76989 4.90779 0.666472 4.65794 0.666534 4.39746C0.666597 4.13697 0.770135 3.88717 0.954372 3.70302C1.13861 3.51888 1.38845 3.41546 1.64894 3.41552C1.90943 3.41558 2.15922 3.51912 2.34337 3.70336L5.08404 6.44469L9.6307 0.651358C9.63897 0.640817 9.64787 0.630798 9.65737 0.621358L9.6567 0.620692Z" fill="white"/>
@@ -95,14 +124,69 @@ const getShoes = () => {
 </defs>
 </svg>
                             </span>
-                            </div>
+                            </div>`
+                            }
                         </div>
                     </div>
                    `;
       });
+      let addCartBtns = document.querySelectorAll('.addCart')
+      let removeCartBtns = document.querySelectorAll('.removeCart')
+
+      Array.from(addCartBtns).forEach((item) => {
+          item.addEventListener('click', () => {
+              basketData = [...basketData, resolve.find((el) => el.id === +item.dataset.id)]
+              getShoes();
+              setLocalStorage()
+          })
+      })
+        Array.from(removeCartBtns).forEach((item) => {
+          item.addEventListener('click', () => {
+              basketData = basketData.filter((el) => el.id !== +item.dataset.id)
+              if (item.classList.contains('removeCartInBasket') && !basketData.length){
+                  basketContent.classList.remove('show');
+              }
+              setLocalStorage()
+              getShoes();
+          })
+      })
     })
     .catch((err) => alert(err));
+
+    getBasket()
 };
+
+
+const getBasket = () => {
+    basketList.innerHTML = ''
+    basketData.forEach((item) => {
+        basketList.innerHTML += `
+            <div class="basket__card">
+                <img src="${item.images}" alt="${item.title}" class="basket__card-img">
+                <h3 class="basket__card__name">${item.title}</h3>
+                <span class="basket__card__sum">${item.price} руб.</span>
+                <img data-id="${item.id}" src="./src/icons/X.svg" alt="" class="basket__card__X removeCart removeCartInBasket">
+              </div>
+    `
+    })
+
+
+
+    Array.from(totalBasket).forEach((item) => {
+        item.textContent = basketData.reduce((acc, rec) => {
+            return acc + +rec.price
+        },0)
+    })
+
+    percentBasket.textContent = basketData.reduce((acc, rec) => {
+        return acc + +rec.price
+    },0) / 100 * 5
+
+
+
+}
+
+getBasket()
 
 const debounce = (fn, delay) => {
   let timeout;
@@ -139,13 +223,15 @@ filterSearch.addEventListener('keyup', (e) => {
 });
 
 basketBtn.addEventListener('click', (e) =>
-  basketContent.classList.toggle('show')
+  basketContent.classList.add('show')
 );
 
-basketContent.addEventListener('click', (e) => {
-  if (e.target.closest('.basket__content') === null) {
+document.querySelector('.basket').addEventListener('click', (e) => {
+  if (e.target.classList.contains('basket')) {
     basketContent.classList.remove('show');
   }
 });
 
 getShoes();
+
+

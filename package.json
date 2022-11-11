@@ -2,14 +2,16 @@
   "name": "new-project",
   "version": "1.0.0",
   "description": "Магазин кросововок",
-  "main": "index.js",
+  "main": "./src/js/main.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "json-server --watch db.json --port 8080"
+    "start": "json-server-auth --watch db.json --port 8080"
   },
   "author": "Beknur Jeenkulov",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.1",
+    "json-server-auth": "^2.1.0"
   }
 }

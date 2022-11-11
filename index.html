@@ -71,8 +71,7 @@
                     />
                   </svg>
                 </span>
-                <p class="header__links-basket-text">1205 руб.</p></
-              >
+                <p class="header__links-basket-text"><span class="total">0</span> руб.</p>
               <a
                 href="./src/pages/favorites.html"
                 class="header__links-favorites"
@@ -90,7 +89,7 @@
                     />
                   </svg> </span
               ></a>
-              <a href="" class="header__links-user"
+              <a href="./src/pages/register.html" class="header__links-user"
                 ><span class="header__links-user-logo"
                   ><svg
                     width="20"
@@ -113,15 +112,20 @@
       </header>
       <aside class="basket">
         <div class="basket__content">
-          <h2 class="basket__title">Корзина</h2>
+          <div>
+            <h2 class="basket__title">Корзина</h2>
+            <div class="basket__cards">
+            </div>
+          </div>
+
           <div class="basket__bottom">
             <div class="basket__text">
               <p class="basket__text-desc">Итого:</p>
-              <p class="basket__text-sum">21 498 руб.</p>
+              <p class="basket__text-sum "><span class="total">0</span> руб.</p>
             </div>
             <div class="basket__text">
               <p class="basket__text-desc">Налог 5%:</p>
-              <p class="basket__text-sum">1074 руб.</p>
+              <p class="basket__text-sum "><span class="percent">0</span> руб.</p>
             </div>
             <button class="basket__btn">Оформить заказ</button>
           </div>
@@ -356,6 +360,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="./src/js/swiper.js"></script>
-    <script src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

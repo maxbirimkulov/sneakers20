@@ -38,6 +38,7 @@
     @include text($int, normal,700, 32px, 0, black)
   }
   &-mainContent{
+    min-height: 700px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -102,7 +103,6 @@
           }
           &-active{
             cursor: pointer;
-            display: none;
             max-height: 32px;
             max-width: 32px;
             padding: 5.33px 8.33px;
