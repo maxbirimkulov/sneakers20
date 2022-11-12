@@ -25,11 +25,9 @@ $int: 'inter', sans-serif;
   }
   color: $col;
 }
-body {
-  background-color: #e5e5e5;
-}
+body,
 .floor {
-  background-color: white;
+  background-color: #fff;
 }
 @import '_header.scss';
 @import '_main.scss';
@@ -39,4 +37,4 @@ body {
 @import '_basket.scss';
 @import '_favorites.scss';
 @import '_basketNone.scss';
-@import "./register";
+@import '_register';

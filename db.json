@@ -2,12 +2,12 @@
   "shoes": [
     {
       "id": 1,
-      "title": "Nike Air Max 270",
+      "title": "New Balance Men's Fresh Foam Sport ",
       "gender": "men",
-      "brand": "nike",
-      "category": "street",
+      "brand": "new balance",
+      "category": "run",
       "price": 4000,
-      "images": "data:image/jpeg;base64,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"
+      "images": "https://m.media-amazon.com/images/I/81RwHsDz6FL._AC_UX695_.jpg"
     },
     {
       "id": 2,
@@ -46,22 +46,31 @@
       "images": "https://m.media-amazon.com/images/I/71pTYjdWb4L._AC_UX575_.jpg"
     },
     {
+      "id": 6,
       "title": "ASICS Women's Gel-Venture 8",
       "gender": "women",
       "category": "run",
       "brand": "asics",
-      "price": 8000,
-      "images": "https://m.media-amazon.com/images/I/61UhmAaH7FL._AC_UL320_.jpg",
-      "id": 6
+      "price": 10000,
+      "images": "https://m.media-amazon.com/images/I/61UhmAaH7FL._AC_UL320_.jpg"
     },
     {
-      "title": "Maks",
+      "id": 7,
+      "title": "Skechers Men's Energy Afterburn Lace-Up Sneaker ",
+      "gender": "men",
+      "category": "train",
+      "brand": "skechers",
+      "price": 3600,
+      "images": "https://m.media-amazon.com/images/I/71EoueH5RqL._AC_UX695_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "adidas Women's Puremotion Adapt Running Shoe ",
       "gender": "women",
-      "category": "run",
-      "brand": "asics",
-      "price": 8000,
-      "images": "https://m.media-amazon.com/images/I/61UhmAaH7FL._AC_UL320_.jpg",
-      "id": 7
+      "category": "train",
+      "brand": "skechers",
+      "price": 6300,
+      "images": "https://m.media-amazon.com/images/I/71Xj3eDJ0UL._AC_UX695_.jpg"
     }
   ],
   "users": [
@@ -76,82 +85,46 @@
       "id": 2
     },
     {
-      "email": "sdasd@mail.ru",
-      "password": "$2a$10$0Ug.BtzdJZNh5NL159z1lONH9YEM4wuyKcQoRUk8X5ZXcQAH8Nfja",
-      "login": "dsaad",
-      "id": 3
-    },
-    {
       "email": "erkin007@mail.ru",
       "password": "$2a$10$FPJ7DHDcooY.KUJQPCbine7LjEe7Qmog/8fHNgYn2PAp.SoBk.sTy",
       "login": "Erkin007",
-      "id": 4
+      "id": 3
     },
     {
       "email": "askar007@mail.ru",
       "password": "$2a$10$bOIcnczMTKl4sDZe2DrQo.MPywr6oKRl4a0p0fe/dSzpYnfiXZiyu",
       "login": "Askar007",
-      "id": 5
+      "id": 4
     },
     {
       "email": "andrey007@mail.ru",
       "password": "$2a$10$fQGzzqTqXReNYIBRBly/e.yX.LHcveANFc6lAyL/bAytnVwj0FA32",
       "login": "Andrey007",
-      "id": 6
-    },
-    {
-      "email": "sadasdas@mail.ru",
-      "password": "$2a$10$jmnkp7NpLiRvRPsj3W/gqufvz7WiRE0MoqCF.wPl4FyVYIlg0EiUa",
-      "login": "asdsadasd",
-      "id": 7
+      "id": 5
     },
     {
       "email": "maksat@mail.ru",
       "password": "$2a$10$gL8xTECIVpJiqLafQ6Wb7OylD39iiSCDxWq1kX8GWi6gg4Pu4.N/u",
       "login": "Maksat",
-      "id": 8
+      "id": 6
     },
     {
       "email": "maks@mail.ru",
       "password": "$2a$10$cBO27ZIBbvyGJos7Z9We9OI9sspXzXieMY0W8YXifxKYxNEE.e4Zi",
       "login": "Maksat",
-      "id": 9
+      "id": 7
     },
     {
       "email": "ali123@mail.ru",
       "password": "$2a$10$bY7rtzDZBeGyMQmXRV52PuU66mS83YCY0aAwBl/iZSO95DIYACXWu",
       "login": "ali123",
-      "id": 10
+      "id": 8
     },
     {
-      "email": "sadasdass@mail.ru",
-      "password": "$2a$10$dY9aejTR6rMcXEjMMTFiUelsg3o6snfDGBz5cj3PqWJYJJ1hhGxNy",
-      "login": "asdasd1a",
-      "id": 11
-    },
-    {
-      "email": "sadasdas1s@mail.ru",
-      "password": "$2a$10$b.rju03VJYAshdpZ.BUIVuBVcWPGAG1lssg5tDEM2aVglXJS7tyeG",
-      "login": "asdasd1a",
-      "id": 12
-    },
-    {
-      "email": "zxcxzcxzc@mail.ru",
-      "password": "$2a$10$zijO90PJo99S1J80yoC1QujmdLfNmUQIGw6EmtyM2UtX9RnS7Gjfe",
-      "login": "2zxcxczzxc",
-      "id": 13
-    },
-    {
-      "email": "asdsadasdasd@mail.ru",
-      "password": "$2a$10$ggYsA7DAr1zsIxKK3veMJOgECeVy4h.1q4EP1DQAyFoU7e88uJ5dG",
-      "login": "saddsad",
-      "id": 14
-    },
-    {
-      "email": "sadasdasd122@mail.ru",
-      "password": "$2a$10$34g9yiuGHoSXc3XuW64wbeXESIFZbcvUe9IhxHdNdO/8QpV68IGfW",
-      "login": "sadasdsad",
-      "id": 15
+      "email": "d.zheenkul@gmail.com",
+      "password": "$2a$10$s0Bo95mq7kEh.CqWv5Fqzeb93cg2zfhihbbYE/nKbiCNRWTlQ9rZC",
+      "login": "Beknur",
+      "id": 9
     }
   ]
 }

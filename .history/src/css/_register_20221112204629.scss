@@ -1,0 +1,9 @@
+.register {
+  &__title {
+    @include text($int, normal, 700, 32px, 0, black);
+    margin: 42px auto 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}

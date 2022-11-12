@@ -1,10 +1,9 @@
-import {getUserFromLocalStorage, user} from "./user.js";
+import { getUserFromLocalStorage, user } from './user.js';
 
+getUserFromLocalStorage();
 
-getUserFromLocalStorage()
-
-console.log(user)
 let basketBtn = document.querySelector('.header__links-basket');
+let userAuthBtn = document.querySelector('.header__links-user');
 let basketContent = document.querySelector('.basket');
 let shoesList = document.querySelector('.main__assort-mainContent');
 let filterSelectorPrice = document.querySelector('.main__assort-select-price');
@@ -18,23 +17,40 @@ let filterSelectorBrands = document.querySelector(
   '.main__assort-select-brands'
 );
 let filterSearch = document.querySelector('.main__assort-form-input');
-let basketList = document.querySelector('.basket__cards')
-let totalBasket = document.querySelectorAll('.total')
-let percentBasket = document.querySelector('.percent')
+let basketList = document.querySelector('.basket__cards');
+let totalBasket = document.querySelectorAll('.total');
+let percentBasket = document.querySelector('.percent');
 let url = 'http://localhost:8080/shoes?';
+let basketData = [];
 
-
-let basketData = [
-
-]
-
-if (localStorage.getItem('basket') !== null) {
-    basketData = JSON.parse(localStorage.getItem('basket'))
+if (user !== null) {
+  userAuthBtn.innerHTML = `
+    <div><span class="header__links-user-logo"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0 10C0 4.579 4.579 0 10 0C15.421 0 20 4.579 20 10C20 13.19 18.408 16.078 16 17.924V18H15.898C14.23 19.245 12.187 20 10 20C7.813 20 5.77 19.245 4.102 18H4V17.924C1.592 16.078 0 13.189 0 10ZM7.12347 15.236C6.59154 15.6639 6.22136 16.2604 6.074 16.927C7.242 17.604 8.584 18 10 18C11.416 18 12.758 17.604 13.926 16.927C13.7785 16.2605 13.4082 15.6641 12.8764 15.2362C12.3445 14.8083 11.6827 14.5744 11 14.573H9C8.3173 14.5742 7.6554 14.808 7.12347 15.236ZM13.7677 13.4117C14.5877 13.9574 15.2286 14.7329 15.61 15.641C17.077 14.182 18 12.176 18 10C18 5.663 14.337 2 10 2C5.663 2 2 5.663 2 10C2 12.176 2.923 14.182 4.39 15.641C4.77144 14.7329 5.41227 13.9574 6.23227 13.4117C7.05227 12.866 8.01501 12.5742 9 12.573H11C11.985 12.5742 12.9477 12.866 13.7677 13.4117ZM6 8C6 5.72 7.72 4 10 4C12.28 4 14 5.72 14 8C14 10.28 12.28 12 10 12C7.72 12 6 10.28 6 8ZM8 8C8 9.178 8.822 10 10 10C11.178 10 12 9.178 12 8C12 6.822 11.178 6 10 6C8.822 6 8 6.822 8 8Z"
+                        fill="#9B9B9B"
+                      />
+                    </svg> ${user.login}</span
+                >
+                <ul class="header__links-user-menu">
+                  <li><span class="header__links-user-exit">Выйти</span></li>
+                </ul>
+                </div>
+  `;
 }
 
-
-
-
+if (localStorage.getItem('basket') !== null) {
+  basketData = JSON.parse(localStorage.getItem('basket'));
+}
 
 let filterPrice = '';
 let filterCategory = '';
@@ -42,10 +58,10 @@ let filterGender = '';
 let filterBrands = '';
 let filterSearchValue = '';
 
-
 const setLocalStorage = () => {
-    localStorage.setItem('basket', JSON.stringify(basketData))
-}
+  localStorage.setItem('basket', JSON.stringify(basketData));
+};
+let userExitBtn = document.querySelector('.header__links-user-exit');
 
 const getShoes = () => {
   shoesList.innerHTML = '';
@@ -61,7 +77,6 @@ const getShoes = () => {
   )
     .then((resolve) => resolve.json())
     .then((resolve) => {
-      console.log(resolve);
       resolve.forEach((item) => {
         shoesList.innerHTML += `
                     <div class="main__assort-mainContent-shoes">
@@ -100,13 +115,14 @@ const getShoes = () => {
                                 } руб.</p>
                             </div>
                             ${
-                                !basketData.filter((el) => el.id === item.id).length ?
-                                    `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask addCart">
+                              !basketData.filter((el) => el.id === item.id)
+                                .length
+                                ? `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask addCart">
                                 <span class="main__assort-mainContent-product-pricesDesc-addBask-logo">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6653 5.13122H7.20214V1.66821C7.20214 0.332846 5.13114 0.332846 5.13114 1.66821V5.13122H1.668C0.332935 5.13122 0.332935 7.20215 1.668 7.20215H5.13114V10.6652C5.13114 12.0005 7.20214 12.0005 7.20214 10.6652V7.20215H10.6653C12.0005 7.20215 12.0005 5.13122 10.6653 5.13122Z" fill="#D3D3D3"/></svg></span>
-                            </div>` : 
-                                    `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask-active removeCart">
+                            </div>`
+                                : `<div data-id="${item.id}" class="main__assort-mainContent-product-pricesDesc-addBask-active removeCart">
                                 <span class="main__assort-mainContent-product-pricesDesc-addBask-logo-active">
                                 <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_60_204)">
@@ -130,63 +146,66 @@ const getShoes = () => {
                     </div>
                    `;
       });
-      let addCartBtns = document.querySelectorAll('.addCart')
-      let removeCartBtns = document.querySelectorAll('.removeCart')
+      let addCartBtns = document.querySelectorAll('.addCart');
+      let removeCartBtns = document.querySelectorAll('.removeCart');
 
       Array.from(addCartBtns).forEach((item) => {
-          item.addEventListener('click', () => {
-              basketData = [...basketData, resolve.find((el) => el.id === +item.dataset.id)]
-              getShoes();
-              setLocalStorage()
-          })
-      })
-        Array.from(removeCartBtns).forEach((item) => {
-          item.addEventListener('click', () => {
-              basketData = basketData.filter((el) => el.id !== +item.dataset.id)
-              if (item.classList.contains('removeCartInBasket') && !basketData.length){
-                  basketContent.classList.remove('show');
-              }
-              setLocalStorage()
-              getShoes();
-          })
-      })
+        item.addEventListener('click', () => {
+          basketData = [
+            ...basketData,
+            resolve.find((el) => el.id === +item.dataset.id),
+          ];
+          getShoes();
+          setLocalStorage();
+        });
+      });
+      Array.from(removeCartBtns).forEach((item) => {
+        item.addEventListener('click', () => {
+          basketData = basketData.filter((el) => el.id !== +item.dataset.id);
+          if (
+            item.classList.contains('removeCartInBasket') &&
+            !basketData.length
+          ) {
+            basketContent.classList.remove('show');
+          }
+          setLocalStorage();
+          getShoes();
+        });
+      });
     })
     .catch((err) => alert(err));
 
-    getBasket()
+  getBasket();
 };
 
-
 const getBasket = () => {
-    basketList.innerHTML = ''
-    basketData.forEach((item) => {
-        basketList.innerHTML += `
+  basketList.innerHTML = '';
+  basketData.forEach((item) => {
+    basketList.innerHTML += `
             <div class="basket__card">
                 <img src="${item.images}" alt="${item.title}" class="basket__card-img">
                 <h3 class="basket__card__name">${item.title}</h3>
                 <span class="basket__card__sum">${item.price} руб.</span>
                 <img data-id="${item.id}" src="./src/icons/X.svg" alt="" class="basket__card__X removeCart removeCartInBasket">
               </div>
-    `
-    })
+    `;
+  });
 
+  Array.from(totalBasket).forEach((item) => {
+    item.textContent = basketData.reduce((acc, rec) => {
+      return acc + +rec.price;
+    }, 0);
+  });
 
+  percentBasket.textContent =
+    (basketData.reduce((acc, rec) => {
+      return acc + +rec.price;
+    }, 0) /
+      100) *
+    5;
+};
 
-    Array.from(totalBasket).forEach((item) => {
-        item.textContent = basketData.reduce((acc, rec) => {
-            return acc + +rec.price
-        },0)
-    })
-
-    percentBasket.textContent = basketData.reduce((acc, rec) => {
-        return acc + +rec.price
-    },0) / 100 * 5
-
-
-
-}
-
-getBasket()
+getBasket();
 
 const debounce = (fn, delay) => {
   let timeout;
@@ -222,10 +241,12 @@ filterSearch.addEventListener('keyup', (e) => {
   debounce(console.log('QWEETT'), 2000);
 });
 
-basketBtn.addEventListener('click', (e) =>
-  basketContent.classList.add('show')
-);
+userExitBtn.addEventListener('click', () => {
+  localStorage.removeItem('user');
+  window.location.href = window.location.href;
+});
 
+basketBtn.addEventListener('click', (e) => basketContent.classList.add('show'));
 document.querySelector('.basket').addEventListener('click', (e) => {
   if (e.target.classList.contains('basket')) {
     basketContent.classList.remove('show');
@@ -233,5 +254,3 @@ document.querySelector('.basket').addEventListener('click', (e) => {
 });
 
 getShoes();
-
-

@@ -1,0 +1,124 @@
+{
+  "shoes": [
+    {
+      "id": 1,
+      "title": "New Balance Men's Fresh Foam Sport ",
+      "gender": "men",
+      "brand": "new balance",
+      "category": "run",
+      "price": 4000,
+      "images": "https://m.media-amazon.com/images/I/81RwHsDz6FL._AC_UX695_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "adidas Men's Lite Racer Adapt 4.0",
+      "gender": "men",
+      "category": "run",
+      "brand": "adidas",
+      "price": 3000,
+      "images": "https://m.media-amazon.com/images/I/81cuTtP+n6L._AC_UX575_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "New Balance Women's 411 V1",
+      "gender": "men",
+      "category": "train",
+      "brand": "new balance",
+      "price": 3000,
+      "images": "https://m.media-amazon.com/images/I/71kN6GMBVRL._AC_UL320_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "adidas Men's Lite Racer Adapt 3.0",
+      "gender": "men",
+      "category": "run",
+      "brand": "adidas",
+      "price": 6000,
+      "images": "https://m.media-amazon.com/images/I/81Kfjw3TIhL._AC_UL320_.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Skechers Women's Go Joy Walking Shoe Sneaker",
+      "gender": "women",
+      "category": "street",
+      "brand": "skechers",
+      "price": 2000,
+      "images": "https://m.media-amazon.com/images/I/71pTYjdWb4L._AC_UX575_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "ASICS Women's Gel-Venture 8",
+      "gender": "women",
+      "category": "run",
+      "brand": "asics",
+      "price": 10000,
+      "images": "https://m.media-amazon.com/images/I/61UhmAaH7FL._AC_UL320_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Skechers Men's Energy Afterburn Lace-Up Sneaker ",
+      "gender": "men",
+      "category": "train",
+      "brand": "skechers",
+      "price": 3600,
+      "images": "https://m.media-amazon.com/images/I/71EoueH5RqL._AC_UX695_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "adidas Women's Puremotion Adapt Running Shoe ",
+      "gender": "women",
+      "category": "train",
+      "brand": "skechers",
+      "price": 6300,
+      "images": "https://m.media-amazon.com/images/I/71Xj3eDJ0UL._AC_UX695_.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "maxbirimkulov@mail.ru",
+      "password": "$2a$10$EaQ2qNdmYqurYa8FmdyqPOueEaDj6amZNgGA26/vAZstvfinL6NDy",
+      "id": 1
+    },
+    {
+      "email": "maxbirimkulov1@mail.ru",
+      "password": "$2a$10$Nn2OynR9dRZOsRLM.iKRyuNe2jxP147Atfpjo.jMMh34G8fGSh2aC",
+      "id": 2
+    },
+    {
+      "email": "erkin007@mail.ru",
+      "password": "$2a$10$FPJ7DHDcooY.KUJQPCbine7LjEe7Qmog/8fHNgYn2PAp.SoBk.sTy",
+      "login": "Erkin007",
+      "id": 3
+    },
+    {
+      "email": "askar007@mail.ru",
+      "password": "$2a$10$bOIcnczMTKl4sDZe2DrQo.MPywr6oKRl4a0p0fe/dSzpYnfiXZiyu",
+      "login": "Askar007",
+      "id": 4
+    },
+    {
+      "email": "andrey007@mail.ru",
+      "password": "$2a$10$fQGzzqTqXReNYIBRBly/e.yX.LHcveANFc6lAyL/bAytnVwj0FA32",
+      "login": "Andrey007",
+      "id": 5
+    },
+    {
+      "email": "maksat@mail.ru",
+      "password": "$2a$10$gL8xTECIVpJiqLafQ6Wb7OylD39iiSCDxWq1kX8GWi6gg4Pu4.N/u",
+      "login": "Maksat",
+      "id": 6
+    },
+    {
+      "email": "maks@mail.ru",
+      "password": "$2a$10$cBO27ZIBbvyGJos7Z9We9OI9sspXzXieMY0W8YXifxKYxNEE.e4Zi",
+      "login": "Maksat",
+      "id": 7
+    },
+    {
+      "email": "ali123@mail.ru",
+      "password": "$2a$10$bY7rtzDZBeGyMQmXRV52PuU66mS83YCY0aAwBl/iZSO95DIYACXWu",
+      "login": "ali123",
+      "id": 8
+    }
+  ]
+}

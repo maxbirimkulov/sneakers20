@@ -1,0 +1,166 @@
+{
+  "shoes": [
+    {
+      "id": 1,
+      "title": "New Balance Men's Fresh Foam Sport ",
+      "gender": "men",
+      "brand": "new balance",
+      "category": "run",
+      "price": 4000,
+      "images": "https://m.media-amazon.com/images/I/81RwHsDz6FL._AC_UX695_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "adidas Men's Lite Racer Adapt 4.0",
+      "gender": "men",
+      "category": "run",
+      "brand": "adidas",
+      "price": 3000,
+      "images": "https://m.media-amazon.com/images/I/81cuTtP+n6L._AC_UX575_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "New Balance Women's 411 V1",
+      "gender": "men",
+      "category": "train",
+      "brand": "new balance",
+      "price": 3000,
+      "images": "https://m.media-amazon.com/images/I/71kN6GMBVRL._AC_UL320_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "adidas Men's Lite Racer Adapt 3.0",
+      "gender": "men",
+      "category": "run",
+      "brand": "adidas",
+      "price": 6000,
+      "images": "https://m.media-amazon.com/images/I/81Kfjw3TIhL._AC_UL320_.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Skechers Women's Go Joy Walking Shoe Sneaker",
+      "gender": "women",
+      "category": "street",
+      "brand": "skechers",
+      "price": 2000,
+      "images": "https://m.media-amazon.com/images/I/71pTYjdWb4L._AC_UX575_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "ASICS Women's Gel-Venture 8",
+      "gender": "women",
+      "category": "run",
+      "brand": "asics",
+      "price": 10000,
+      "images": "https://m.media-amazon.com/images/I/61UhmAaH7FL._AC_UL320_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Skechers Men's Energy Afterburn Lace-Up Sneaker ",
+      "gender": "men",
+      "category": "train",
+      "brand": "skechers",
+      "price": 3600,
+      "images": "https://m.media-amazon.com/images/I/71EoueH5RqL._AC_UX695_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "adidas Women's Puremotion Adapt Running Shoe ",
+      "gender": "women",
+      "category": "train",
+      "brand": "skechers",
+      "price": 6300,
+      "images": "https://m.media-amazon.com/images/I/71Xj3eDJ0UL._AC_UX695_.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "maxbirimkulov@mail.ru",
+      "password": "$2a$10$EaQ2qNdmYqurYa8FmdyqPOueEaDj6amZNgGA26/vAZstvfinL6NDy",
+      "id": 1
+    },
+    {
+      "email": "maxbirimkulov1@mail.ru",
+      "password": "$2a$10$Nn2OynR9dRZOsRLM.iKRyuNe2jxP147Atfpjo.jMMh34G8fGSh2aC",
+      "id": 2
+    },
+    {
+      "email": "sdasd@mail.ru",
+      "password": "$2a$10$0Ug.BtzdJZNh5NL159z1lONH9YEM4wuyKcQoRUk8X5ZXcQAH8Nfja",
+      "login": "dsaad",
+      "id": 3
+    },
+    {
+      "email": "erkin007@mail.ru",
+      "password": "$2a$10$FPJ7DHDcooY.KUJQPCbine7LjEe7Qmog/8fHNgYn2PAp.SoBk.sTy",
+      "login": "Erkin007",
+      "id": 4
+    },
+    {
+      "email": "askar007@mail.ru",
+      "password": "$2a$10$bOIcnczMTKl4sDZe2DrQo.MPywr6oKRl4a0p0fe/dSzpYnfiXZiyu",
+      "login": "Askar007",
+      "id": 5
+    },
+    {
+      "email": "andrey007@mail.ru",
+      "password": "$2a$10$fQGzzqTqXReNYIBRBly/e.yX.LHcveANFc6lAyL/bAytnVwj0FA32",
+      "login": "Andrey007",
+      "id": 6
+    },
+    {
+      "email": "sadasdas@mail.ru",
+      "password": "$2a$10$jmnkp7NpLiRvRPsj3W/gqufvz7WiRE0MoqCF.wPl4FyVYIlg0EiUa",
+      "login": "asdsadasd",
+      "id": 7
+    },
+    {
+      "email": "maksat@mail.ru",
+      "password": "$2a$10$gL8xTECIVpJiqLafQ6Wb7OylD39iiSCDxWq1kX8GWi6gg4Pu4.N/u",
+      "login": "Maksat",
+      "id": 8
+    },
+    {
+      "email": "maks@mail.ru",
+      "password": "$2a$10$cBO27ZIBbvyGJos7Z9We9OI9sspXzXieMY0W8YXifxKYxNEE.e4Zi",
+      "login": "Maksat",
+      "id": 9
+    },
+    {
+      "email": "ali123@mail.ru",
+      "password": "$2a$10$bY7rtzDZBeGyMQmXRV52PuU66mS83YCY0aAwBl/iZSO95DIYACXWu",
+      "login": "ali123",
+      "id": 10
+    },
+    {
+      "email": "sadasdass@mail.ru",
+      "password": "$2a$10$dY9aejTR6rMcXEjMMTFiUelsg3o6snfDGBz5cj3PqWJYJJ1hhGxNy",
+      "login": "asdasd1a",
+      "id": 11
+    },
+    {
+      "email": "sadasdas1s@mail.ru",
+      "password": "$2a$10$b.rju03VJYAshdpZ.BUIVuBVcWPGAG1lssg5tDEM2aVglXJS7tyeG",
+      "login": "asdasd1a",
+      "id": 12
+    },
+    {
+      "email": "zxcxzcxzc@mail.ru",
+      "password": "$2a$10$zijO90PJo99S1J80yoC1QujmdLfNmUQIGw6EmtyM2UtX9RnS7Gjfe",
+      "login": "2zxcxczzxc",
+      "id": 13
+    },
+    {
+      "email": "asdsadasdasd@mail.ru",
+      "password": "$2a$10$ggYsA7DAr1zsIxKK3veMJOgECeVy4h.1q4EP1DQAyFoU7e88uJ5dG",
+      "login": "saddsad",
+      "id": 14
+    },
+    {
+      "email": "sadasdasd122@mail.ru",
+      "password": "$2a$10$34g9yiuGHoSXc3XuW64wbeXESIFZbcvUe9IhxHdNdO/8QpV68IGfW",
+      "login": "sadasdsad",
+      "id": 15
+    }
+  ]
+}

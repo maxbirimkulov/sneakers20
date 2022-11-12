@@ -1,0 +1,5 @@
+.register {
+  &-title {
+    @include text($int, normal, 700, 32px, 0, black);
+  }
+}
