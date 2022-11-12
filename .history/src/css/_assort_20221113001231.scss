@@ -75,10 +75,6 @@
       border-radius: 40px;
       padding: 20px 29px 34px 30px;
       max-width: 210px;
-      &:hover {
-        transition: 0.2s;
-        box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.1);
-      }
     }
     &-favorites {
       display: inline-block;
@@ -106,16 +102,15 @@
       &-desc {
         @include text($int, normal, 400, 14px, 17px, black);
       }
-      &-category {
-        @include text($int, normal, 600, 14px, 0, black);
-        margin: 5px 0 0;
-        text-transform: capitalize;
-      }
       &-pricesDesc {
         margin-top: 14px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &-category {
+          margin: 3px 0 0;
+          text-transform: capitalize;
+        }
         &-price {
           @include text($int, normal, 500, 11px, 13px, #bdbdbd);
           text-transform: uppercase;

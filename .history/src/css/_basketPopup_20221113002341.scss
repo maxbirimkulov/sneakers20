@@ -1,5 +1,5 @@
 .basket {
-  transform: translateX(100%);
+  display: none;
   background: rgba(0, 00, 000, 0.4);
   height: 100vh;
   width: 100vw;
@@ -8,7 +8,16 @@
   left: 0;
   top: 0;
   bottom: 0;
+  transition: 0;
+  &.show {
+    display: block;
+
+    &__content {
+      transform: translateX(0%);
+    }
+  }
   &__content {
+    transform: translateX(100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,6 +26,7 @@
     padding: 30px;
     height: 100vh;
     width: 385px;
+    transition: 0.3s;
     top: 0;
     right: 0;
   }
@@ -79,9 +89,6 @@
       max-width: 70px;
       cursor: pointer;
     }
-  }
-  &.show {
-    transform: translateX(0%);
   }
   &__title {
     @include text($int, normal, 700, 24px, 29px, #000000);

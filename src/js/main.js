@@ -4,6 +4,7 @@ getUserFromLocalStorage();
 
 let basketBtn = document.querySelector('.header__links-basket');
 let userAuthBtn = document.querySelector('.header__links-user');
+let userExitBtn = document.querySelector('.header__links-user-exit');
 let basketContent = document.querySelector('.basket');
 let shoesList = document.querySelector('.main__assort-mainContent');
 let filterSelectorPrice = document.querySelector('.main__assort-select-price');
@@ -24,6 +25,10 @@ let url = 'http://localhost:8080/shoes?';
 let basketData = [];
 
 if (user !== null) {
+  userExitBtn.addEventListener('click', () => {
+    localStorage.removeItem('user');
+    window.location.href = window.location.href;
+  });
   userAuthBtn.innerHTML = `
     <div><span class="header__links-user-logo"
                     ><svg
@@ -61,7 +66,6 @@ let filterSearchValue = '';
 const setLocalStorage = () => {
   localStorage.setItem('basket', JSON.stringify(basketData));
 };
-let userExitBtn = document.querySelector('.header__links-user-exit');
 
 const getShoes = () => {
   shoesList.innerHTML = '';
@@ -97,14 +101,15 @@ const getShoes = () => {
                         <img style="width: 100%" src="${
                           item.images
                         }" alt="product image" class="main__assort-mainContent-product">
-                        
-                        <h4 class="main__assort-mainContent-product-desc">${
-                          item.title
-                        }</h4>
-                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${
-                          item.gender === 'men' ? 'мужской' : 'Женский'
-                        }</p>
-                        <p style="margin: 10px 0;" class="main__assort-mainContent-product-gender">${
+                        <h4 class="main__assort-mainContent-product-desc">
+                         ${
+                           item.gender === 'men'
+                             ? 'Мужские '
+                             : item.gender === 'women'
+                             ? 'Женские '
+                             : ''
+                         }${item.title}</h4>
+                        <p class="main__assort-mainContent-product-category">${
                           item.category
                         }</p>
                         <div class="main__assort-mainContent-product-pricesDesc">
@@ -241,12 +246,7 @@ filterSearch.addEventListener('keyup', (e) => {
   debounce(console.log('QWEETT'), 2000);
 });
 
-userExitBtn.addEventListener('click', () => {
-  localStorage.removeItem('user');
-  window.location.href = window.location.href;
-});
-
-basketBtn.addEventListener('click', (e) => basketContent.classList.add('show'));
+basketBtn.addEventListener('click', () => basketContent.classList.add('show'));
 document.querySelector('.basket').addEventListener('click', (e) => {
   if (e.target.classList.contains('basket')) {
     basketContent.classList.remove('show');
