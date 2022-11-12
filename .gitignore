@@ -1,4 +1,6 @@
 /node_modules
+/.history
+/history
 
 /prepros.config
 /package-lock.json
