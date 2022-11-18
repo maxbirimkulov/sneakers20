@@ -21,7 +21,7 @@
         </aside>
         <div class="admin__info admin__info-active">
             <h2 class="admin__info-title">Orders</h2>
-            <table class="admin__table">
+            <table class="admin__table ">
                 <tr class="admin__table-head">
                 <th class="admin__table-title">id</th>
                 <th class="admin__table-title">title</th>
@@ -90,16 +90,10 @@
                 <th class="admin__table-title">change</th>
                 <th class="admin__table-title">remove</th>
                 </tr>
-                <tr class="admin__table-desc">
-                    <td class="admin__table-info">1</td>
-                    <td class="admin__table-info">Nike Air Force 2</td>
-                    <td class="admin__table-info">300р.</td>
-                    <td class="admin__table-info">man</td>
-                    <td class="admin__table-info">nike</td>
-                    <td class="admin__table-info">run</td>
-                    <td class="admin__table-info"><button class="admin__table-btn add">Change</button></td>
-                    <td class="admin__table-info"><button class="admin__table-btn remove">Remove</button></td>
-                </tr>
+                <tbody class="shoes">
+
+                </tbody>
+
             </table>
             <div class="container">
                 <div class="admin__links">
@@ -146,14 +140,9 @@
                 <th class="admin__table-title">User Change</th>
                 <th class="admin__table-title">User Ban</th>
                 </tr>
-                <tr class="admin__table-desc">
-                    <td class="admin__table-info">1</td>
-                    <td class="admin__table-info">dzhamanbaev@gmail.com</td>
-                    <td class="admin__table-info">loki</td>
-                    <td class="admin__table-info">3 orders</td>
-                    <td class="admin__table-info"><button class="admin__table-btn add">Change</button></td>
-                    <td class="admin__table-info"><button class="admin__table-btn remove">Ban User</button></td>
-                </tr>
+                <tbody class="users">
+
+                </tbody>
             </table>
             <div class="container">
                 <div class="admin__links">
@@ -191,6 +180,25 @@
         </div>
     </section>
 </main>
+
+<div class="overlay">
+    <div class="popup-user">
+        <form class="popup-user__form">
+            <h2 class="popup-user__form-title">
+                User Change
+            </h2>
+            <div class="popup-user__form-block">
+                <input type="text" class="popup-user__form-input" placeholder="Change email">
+            </div>
+            <div class="popup__form-block">
+                <input type="text" class="popup-user__form-input" placeholder="Change login">
+            </div>
+            <button class="popup-user__form-btn" type="submit">
+                Change
+            </button>
+        </form>
+    </div>
+</div>
 
 <script src="src/js/main.js"></script>
 </body>

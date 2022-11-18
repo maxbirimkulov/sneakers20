@@ -136,15 +136,6 @@
       "images": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/312b1c49-554c-453b-976a-3987af5d6fd1/air-force-1-07-premium-mens-shoes-jTLc6j.png"
     },
     {
-      "id": 16,
-      "title": "Nike Air Jordan 1 Mid SE",
-      "gender": "man",
-      "category": "street",
-      "brand": "nike",
-      "price": 11380.59,
-      "images": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/036a324a-a847-4d3c-9607-fa98210c2bcc/air-jordan-1-mid-se-mens-shoes-bZLgb7.png"
-    },
-    {
       "id": 17,
       "title": "Lining Sport Plus",
       "gender": "woman",
@@ -280,15 +271,6 @@
       "images": "https://pumakyrgyzstan.kg/images/products/jpg/37604902185x185.jpg?v4.28"
     },
     {
-      "id": 32,
-      "title": "PUMA R698 Reverse Classics AW22",
-      "gender": "man",
-      "category": "street",
-      "brand": "puma",
-      "price": 12990,
-      "images": "https://pumakyrgyzstan.kg/images/products/jpg/38353401320x320.jpg?v4.28"
-    },
-    {
       "id": 33,
       "title": "PUMA RS-2K CORE SS21",
       "gender": "man",
@@ -323,15 +305,6 @@
       "brand": "nike",
       "price": 12700,
       "images": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/78f9a271-d252-4052-8a24-58615de16ab4/air-force-1-07-ayakkab%C4%B1s%C4%B1-Wpr816.png"
-    },
-    {
-      "id": 37,
-      "title": "Nike Fly.By Mid 3",
-      "gender": "man",
-      "category": "street",
-      "brand": "nike",
-      "price": 4636,
-      "images": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/b1b20145-090b-4c6d-bec3-642e43ea4042/flyby-mid-3-basketball-shoes-sNRbLR.png"
     }
   ],
   "users": [
