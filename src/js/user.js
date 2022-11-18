@@ -13,6 +13,8 @@ export const getUserFromLocalStorage = () => {
 
 export const changeUser = (data) => {
   user = { ...data };
+  console.log(user)
   localStorage.setItem('user', JSON.stringify(user));
-  location.href = '/';
+  location.href = 'http://localhost:63342/new%20project/index.html';
 };
+
